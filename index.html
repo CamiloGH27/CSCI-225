@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-      <title>CSCI225 Homepage of Juan Camilo Gomez H</title>
-        <meta charset="UTF-8">
-    </head>
+<head>
+  <title>CSCI225 Homepage of Juan Camilo Gomez H</title>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/home.css">
+</head>
 
 <body>
-<!-- headder-->
-  <header>
-    <nav> 
-    <ul>
-      <li> <a href="https://www.usca.edu/"> USCA Website</a></li>
-      <li> <a href="#assignments">Go to Assignments</a> </li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li> <a href="#Schedule"> Go to Schedule</a></li>
-      <li> <a href="#contactinfo"> Go to Contanct Information</a></li>
+ 
+<header>
+    <nav>
+        <ul>
+            <li><a href="https://www.usca.edu/">USCA Website</a></li>
+            <li><a href="#assignments">Assignments</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#Schedule">Schedule</a></li>
+            <li><a href="#contactinfo">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    </ul>
-</nav>
+<main class="page-layout">
 
-  </header>
-<!--main content area-->
-<main>
-  <section id="Introduction" class="introduction">  
-  <h1> introduction </h1>
-  <p> My name is Juan Camilo, i am from <mark>Colombia</mark> and been here in the U.S for 7 years.
-    I like to focus on my studies and try to learn something new everyday.  I am close to graduate from <abbr title="University of South Carolina Aiken">USCA</abbr> with a concentration in cybersecurity. I am interested in developing my technical skills and pursuing a full career in cybersecurity or IT. </p>
-  
-    <img src="img/ColombianGround.jfif" alt="IntroPic" >
-  </section> 
-  
-  <section id="portfolio" class="portfolio"> 
-  <h2> portfolio </h2>
-  <ol> 
+    <!-- LEFT COLUMN -->
+    <div class="left-column">
+
+        <section id="Introduction" class="introduction hover-section">
+            <h1>Introduction</h1>
+            <div class="reveal-content">
+                  <p> My name is Juan Camilo, i am from <mark>Colombia</mark> and been here in the U.S for 7 years.I like to focus on my studies and try to learn something new everyday.  I am close to graduate from <abbr title="University of South Carolina Aiken">USCA</abbr> with a concentration in cybersecurity. Some of my hobbies include videogames, soccer, baking and pc building. I am interested in developing my technical skills and pursuing a full career in cybersecurity or IT, right now i am working in a capstone project and studying towards certifications like compTIA security+ or network+. </p>
+                  <img src="img/ColombianGround.jfif" alt="IntroPic" >
+            </div>
+        </section>
+
+        <section id="assignments" class="assignments hover-section">
+            <h2>Assignments</h2>
+            <div class="reveal-content">
+                  <ol>
+<li> <a href="doc/Assignment1.pdf"> Assignment 1.</a> </li>
+  </ol>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-column">
+
+        <section id="portfolio" class="portfolio hover-section">
+            <h2>Portfolio</h2>
+            <div class="reveal-content">
+                  <ol> 
     <li> Budget tracking application
       <ul> <li> Developed a budget tracking application using VB.Net that track expenses, income and transactions types </li>
           <li> Skills  involved: file navegation, modification and creation, List search algorithm</li>
@@ -55,12 +76,13 @@
     </li>
     
   </ol>
-</section> 
+            </div>
+        </section>
 
-  <section id="Schedule" class="Schedule">  
-
-  <h2>Schedule</h2>
-<table border="1">
+        <section id="Schedule" class="Schedule hover-section">
+            <h2>Schedule</h2>
+            <div class="reveal-content schedule-content">
+                <table border="1">
     <tr>
         <th>Time</th>
         <th>Monday</th>
@@ -131,37 +153,41 @@
       
     </tr>
 </table>
+            </div>
+        </section>
 
-</section>
+    </div>
+
 </main>
 
-<!--side bar-->
-<aside> 
-  <section id="assignments" class="assignments">  
-  <h2> Assignments</h2>
-  <ol>
-<li> <a href="doc/Assignment1.pdf"> Assignment 1.</a> </li>
-  <li> <a href="doc/ContactMe.html"> Contact me.</a></li>
-  </ol>
 
-</section>
-</aside>
-
-<!--footer area - contant info-->
+<!-- BOTTOM CENTER: CONTACT INFORMATION -->
 <footer>
-<section id="contactinfo" class="contactinfo">
-  <address>
+    <section id="contactinfo" class="contactinfo hover-section">
+        <h2>Contact Information</h2>
 
-    <div>
-  <p>contact information:</p>
-  <a href="mailto:gomezhej@usca.edu">gomezhej@usca.edu</a>
-</div>
-</address>
+        <div class="reveal-content">
+            <address>
+                <p>Contact information:</p>
+                <a href="mailto:gomezhej@usca.edu">
+                    gomezhej@usca.edu
+                </a>
+                <a href="doc/ContactMe.html">
+                    Contact Me
+                </a>
+            </address>
+        </div>
+    </section>
 
-<p>&copy; 2026 Juan Camilo Gomez H.</p>
-
-</section>
-
+    <p class="copyright">
+        &copy; 2026 Juan Camilo Gomez H.
+    </p>
 </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
