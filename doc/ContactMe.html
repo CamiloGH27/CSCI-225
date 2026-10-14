@@ -7,76 +7,115 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body >
-    <div class="container">
+<body class="pt-5 mt-4" style="background-color: #4e6796;">
 
-      <!-- Navigation Bar-->
-        <header class="row">
-            <nav class="col navbar bg-dark text-white">
+    <!-- Navigation Bar (Fixed on top, dark background, bold font list) -->
+    <header class="row">
+        <nav class="col navbar navbar-expand-lg bg-dark text-white fixed-top px-3 shadow">
+            <h1 >Contact Me</h1>
+            <ul class="nav fw-bold">
+                <li class="nav-item"><a class="nav-link text-white" href="https://www.usca.edu/">USCA Website</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#assignments">Go to Assignments</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#Schedule">Go to Schedule</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contactinfo">Go to Contact Information</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                <h1 class="collapse">Contact Me</h1>
-                <ul class="nav">
-                    <li class="nav-item"> <a class="nav-link" href="https://www.usca.edu/"> USCA Website</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#assignments">Go to Assignments</a> </li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#Schedule"> Go to Schedule</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#contactinfo"> Go to Contanct Information</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <br>
-
-        <!--Video and Form-->
-        <main class="bg-success p-2 text-white bg-opacity-75">
-            <div class="row">
-                <div class="col">
-                    <iframe width="315" height="560" src="https://www.youtube.com/embed/t0ZVZRNYSw0" title="Video">
+    <div class="container my-4">
+        <!-- Video and Form Layout (Side by Side) -->
+        <main class="p-4 text-white bg-opacity-75 rounded shadow" style="background-color: #133d64;">
+            <div class="row align-items-start g-4">
+                
+                <!-- Video Frame with Border -->
+                <div class="col-lg-5 text-center">
+                    <iframe class="border border-3 border-light rounded shadow" width="100%" height="650" src="https://www.youtube.com/embed/t0ZVZRNYSw0" title="Video">
                     </iframe>
                 </div>
 
-                <div class="col">
+                <!-- Styled Form -->
+                <div class="col-lg-7">
                     <form name="feedback">
-                        <p> Name: <input type="text" name="fname" placeholder="anonymous" required> </p>
-                        <p> Last Name: <input type="text" name="lname" placeholder="anonymous" required> </p>
+                        
+                        <!--  Name -->
+                        <div class="form-floating mb-3 text-dark">
+                            <input type="text" class="form-control" id="floatingFName" name="fname" placeholder="anonymous" required>
+                            <label for="floatingFName">First Name</label>
+                        </div>
 
-                        <p> E-mail:<input type="email" name="mail" placeholder="name@domain.com" required></p>
+                        <!--  Last Name -->
+                        <div class="form-floating mb-3 text-dark">
+                            <input type="text" class="form-control" id="floatingLName" name="lname" placeholder="anonymous" required>
+                            <label for="floatingLName">Last Name</label>
+                        </div>
 
+                        <!-- Email + Help Text -->
+                        <div class="form-floating mb-3 text-dark">
+                            <input type="email" class="form-control" id="floatingEmail" name="mail" placeholder="name@domain.com" required>
+                            <label for="floatingEmail">E-mail address</label>
+                        </div>
+                        <small class="form-text text-muted mb-3 d-block">Your email will not be shared with anyone else.</small>
 
-                        <p></p>
-                        <!-- Radio Buttons-->
-                        <p>Do you recomend this Website?</p>
-                        <input type="radio" name="recomend" value="yes"> Yes
-                        <input type="radio" name="recomend" value="no"> No
-                        <br>
-                        <!-- range-->
-                        <p> Rate the Website: </p>
-                        <p> 1<input type="range" name="rating" min="1" max="10">10 </p>
+                        <!-- Radio Buttons -->
+                        <div class="mb-3">
+                            <label class="form-check d-block fw-semibold">Do you recommend this Website?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="recomend" id="recYes" value="yes">
+                                <label class="form-check-label" for="recYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="recomend" id="recNo" value="no">
+                                <label class="form-check-label" for="recNo">No</label>
+                            </div>
+                        </div>
 
+                        <!-- Range Slider -->
+                        <div class="mb-3">
+                            <label class="form-range fw-semibold">Rate the Website (1-10):</label>
+                            <input type="range" class="form-range" name="rating" min="1" max="10">
+                        </div>
 
-                        <p>What is your favorite website?</p>
-                        <select name="website">
-                            <option value="Google">Google</option>
-                            <option value="Facebook">Facebook</option>
-                            <option value="Twitter">Twitter</option>
-                            <option value="Twitch">Twitch</option>
-                        </select>
+                        <!-- Floating Label: Select Box -->
+                        <div class="form-floating mb-3 text-dark">
+                            <select class="form-control" id="floatingWebsite" name="website">
+                                <option value="Google">Google</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Twitter">Twitter</option>
+                                <option value="Twitch">Twitch</option>
+                            </select>
+                            <label for="floatingWebsite">What is your favorite website?</label>
+                        </div>
 
-                        <!--Aditional form elements-->
-                        <p>Todays date: <input type="date" name="date"></p>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <label class="form-control fw-semibold">Today's date:</label>
+                            <input type="date" class="form-control" name="date">
+                        </div>
 
-                        <p>What is your favorite color? <input type="color" name="FavColor"></p>
+                        <!-- Color Input -->
+                        <div class="mb-3">
+                            <label class="form-control fw-semibold">What is your favorite color?</label>
+                            <input type="color" class="form-control form-control-color" name="FavColor" value="#563d7c">
+                        </div>
 
-                        <p>Phone Number:<input type="tel" name="phone" placeholder="xxx-xxx-xxxx"
-                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> </p>
+                        <!-- Phone Input -->
+                        <div class="mb-3">
+                            <label class="form-control fw-semibold">Phone Number:</label>
+                            <input type="tel" class="form-control" name="phone" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        </div>
 
-                        <!--Aditional coments-->
-                        <p>Additional Comments:</p>
-                        <p> <textarea name="comments" rows="5" cols="25"></textarea> </p>
+                        <!-- Floating Label: Textarea Comments -->
+                        <div class="form-floating mb-3 text-dark">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingComments" name="comments" style="height: 100px"></textarea>
+                            <label for="floatingComments">Additional Comments</label>
+                        </div>
 
-                        <input type="submit" name="submit" id="submit">
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-dark w-100 shadow-sm" id="submit">Submit Feedback</button>
                     </form>
                 </div>
+
             </div>
         </main>
     </div>
