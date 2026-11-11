@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI and Calorie Calculator</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f3f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #087f8c, #20a39e);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            font-weight: bold;
+        }
+
+        .calculator-card {
+            background: white;
+            border: none;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #087f8c;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #444;
+        }
+
+        .form-control, .form-select {
+            padding: 11px;
+            border-radius: 8px;
+        }
+
+        .btn-custom {
+            background-color: #087f8c;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .btn-custom:hover {
+            background-color: #06636d;
+            color: white;
+        }
+
+        .result-box {
+            background: #eaf7f7;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            height: 100%;
+        }
+
+        .result-box h3 {
+            color: #087f8c;
+            font-weight: bold;
+        }
+
+        .result-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #mealList li {
+            background: #f8fafa;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            list-style-position: inside;
+        }
+
+        .total-box {
+            background: #eaf7f7;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #087f8c;
+        }
+
+        footer {
+            color: #888;
+            text-align: center;
+            padding: 25px;
+        }
+        .bmi-image-section {
+    background-color: #f8fafa;
+    border-radius: 12px;
+    padding: 25px;
+    min-height: 350px;
+}
+
+.bmi-image-section img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 15px auto 0;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <h1>BMI & Calorie Calculator</h1>
+        <p class="mb-0">Calculate your BMI and generate a meal plan.</p>
+    </header>
+
+
+    <div class="container my-5">
+
+        <div class="row g-4">
+
+            <!-- Calculator Section -->
+            <div class="col-lg-5">
+
+                <div class="calculator-card">
+
+                    <h3 class="section-title">Your Information</h3>
+
+                    <form id="bmiForm">
+
+                        <!-- Weight -->
+                        <div class="mb-3">
+                            <label for="weight" class="form-label">
+                                Weight (kg)
+                            </label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   id="weight"
+                                   name="weight"
+                                   placeholder="Enter your weight"
+                                   min="1"
+                                   step="any"
+                                   required>
+                        </div>
+
+                        <!-- Height -->
+                        <div class="mb-3">
+                            <label for="height" class="form-label">
+                                Height (cm)
+                            </label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   id="height"
+                                   name="height"
+                                   placeholder="Enter your height"
+                                   min="1"
+                                   step="any"
+                                   required>
+                        </div>
+
+                        <!-- Age -->
+                        <div class="mb-3">
+                            <label for="age" class="form-label">
+                                Age
+                            </label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   id="age"
+                                   name="age"
+                                   placeholder="Enter your age"
+                                   min="18"
+                                   required>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="mb-4">
+                            <label for="gender" class="form-label">
+                                Gender
+                            </label>
+
+                            <select class="form-select"
+                                    id="gender"
+                                    name="gender"
+                                    required>
+
+                                <option value="">Select Gender</option>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+
+                            </select>
+                        </div>
+
+                        <!-- Calculate Button -->
+                        <button type="submit"
+                                class="btn btn-custom w-100">
+                            Calculate Results
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+           
+<!-- Results Section -->
+<div class="col-lg-7">
+
+    <div class="calculator-card h-100">
+
+        <h3 class="section-title">Your Results</h3>
+
+        <div class="row g-3">
+
+            <!-- BMI Result -->
+            <div class="col-md-6">
+
+                <div class="result-box">
+
+                    <p class="text-muted mb-2">Your BMI</p>
+
+                    <h3 class="result-value" id="bmi">--</h3>
+
+                    <p class="mb-0 text-muted" id="category">
+                        BMI Category
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Calorie Result -->
+            <div class="col-md-6">
+
+                <div class="result-box">
+
+                    <p class="text-muted mb-2">
+                        Daily Calorie Target
+                    </p>
+
+                    <h3 class="result-value" id="calorieTarget">
+                        --
+                    </h3>
+
+                    <p class="mb-0 text-muted">
+                        kcal / day
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <!-- BMI Image Section -->
+        <div class="bmi-image-section text-center">
+
+
+         <img id="bmiImage" src="img/normal.png" alt="Test image">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+        <!-- Meal Plan Section -->
+        <div class="calculator-card mt-4">
+
+            <div class="d-flex flex-wrap justify-content-between
+                        align-items-center gap-3 mb-3">
+
+                <div>
+                    <h3 class="section-title mb-1">Your Meal Plan</h3>
+
+                    <p class="text-muted mb-0">
+                        Generate a meal plan based on your calorie target.
+                    </p>
+                </div>
+
+                <button type="button"
+                        id="generateMealPlan"
+                        class="btn btn-custom">
+
+                    Generate Meal Plan
+
+                </button>
+
+            </div>
+
+            <hr>
+
+            <h5 class="fw-bold mb-3">Selected Foods</h5>
+
+            <ul id="mealList" class="list-unstyled">
+            </ul>
+
+            <div class="total-box mt-3">
+
+                Total Meal Plan Calories:
+
+                <span id="mealCalories">0</span> kcal
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p class="mb-0">
+            BMI & Calorie Calculator
+        </p>
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+    <!-- Your JavaScript -->
+<script src="js/health.js"></script>
+</body>
+</html>
+
